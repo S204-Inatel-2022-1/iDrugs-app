@@ -65,8 +65,8 @@ def CRUD_type_route():
     return Response(response, mimetype='application/json', status=response.status_code)
 
 @app.route('/')
-def nao_entre_em_panico():
-    return jsonify({"message": "Aplicação rodando"})
+def status():
+    return jsonify({"message": "IDRUGS-APP: Aplicação rodando"})
 
 app.register_blueprint(blueprint)
 
