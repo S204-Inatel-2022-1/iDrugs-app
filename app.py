@@ -1,14 +1,15 @@
-import os
-import urllib
-
-from flask import Blueprint, request, Response, jsonify
-
-from config import app, pharma_engine
 import json
+import os
 
 import requests
+from flask import Blueprint, request, Response, jsonify
+from flask_cors import CORS
+
+from config import app, pharma_engine
 
 blueprint = Blueprint('app', __name__, url_prefix='/idrugs-app')
+
+CORS(app)
 
 # USER
 @blueprint.route('/pharma/product', methods=['POST', 'PUT', 'DELETE', 'GET'])
