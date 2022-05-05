@@ -66,7 +66,7 @@ def CRUD_type_route():
 
 @app.route('/')
 def status():
-    return jsonify({"message": "IDRUGS-APP: Aplicação rodando"})
+    return jsonify({"message": "IDRUGS-APP: Aplicação rodando na porta 8080"})
 
 app.register_blueprint(blueprint)
 
