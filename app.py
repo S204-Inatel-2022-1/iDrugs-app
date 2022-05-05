@@ -15,6 +15,8 @@ CORS(app)
 @blueprint.route('/pharma/product', methods=['POST', 'PUT', 'DELETE', 'GET'])
 def CRUD_product_route():
     url = pharma_engine + 'product'
+    print("User: ")
+    print(url)
     if request.method == 'POST':
         data = json.dumps(request.json)
         response = requests.post(url, json=data)
@@ -31,8 +33,8 @@ def CRUD_product_route():
 
 @blueprint.route('/pharma/user', methods=['POST', 'PUT', 'DELETE', 'GET'])
 def CRUD_user_route():
-    print("User: ")
     url = pharma_engine + 'user'
+    print("User: ")
     print(url)
     if request.method == 'POST':
         data = json.dumps(request.json)
@@ -51,6 +53,8 @@ def CRUD_user_route():
 @blueprint.route('/pharma/type', methods=['POST', 'PUT', 'DELETE', 'GET'])
 def CRUD_type_route():
     url = pharma_engine + 'type'
+    print("User: ")
+    print(url)
     if request.method == 'POST':
         data = json.dumps(request.json)
         response = requests.post(url, json=data)
@@ -67,7 +71,7 @@ def CRUD_type_route():
 
 @app.route('/')
 def status():
-    return jsonify({"message": "IDRUGS-APP: Aplicação rodando na porta 8080"})
+    return jsonify({"message": "IDRUGS-APP: Aplicação rodando na porta 8080. CORS ativo"})
 
 app.register_blueprint(blueprint)
 
