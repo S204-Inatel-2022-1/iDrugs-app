@@ -1,6 +1,7 @@
+import os
 import urllib
 
-from flask import Blueprint, request, Response
+from flask import Blueprint, request, Response, jsonify
 
 from config import app, pharma_engine
 import json
@@ -63,7 +64,12 @@ def CRUD_type_route():
         response = requests.get(url, json=data)
     return Response(response, mimetype='application/json', status=response.status_code)
 
+@app.route('/')
+def nao_entre_em_panico():
+    return jsonify({"message": "Aplicação rodando"})
+
 app.register_blueprint(blueprint)
 
 if __name__ == "__main__":
-    app.run(port=8080, debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
