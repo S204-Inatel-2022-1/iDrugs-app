@@ -11,4 +11,4 @@ app.env = os.getenv('ENV')
 if app.env == 'dev':
     url = 'https://idrugs-pharma-engine.herokuapp.com'
 
-pharma_engine = url + '/idrugs-pharma-engine'
+pharma_engine = url + '/idrugs-pharma-engine/'
