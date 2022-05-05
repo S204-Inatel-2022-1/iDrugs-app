@@ -29,7 +29,9 @@ def CRUD_product_route():
 
 @blueprint.route('/pharma/user', methods=['POST', 'PUT', 'DELETE', 'GET'])
 def CRUD_user_route():
+    print("User: ")
     url = pharma_engine + 'user'
+    print(url)
     if request.method == 'POST':
         data = json.dumps(request.json)
         response = requests.post(url, json=data)
