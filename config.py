@@ -9,6 +9,6 @@ app = Flask(__name__)
 app.env = os.getenv('ENV')
 
 if app.env == 'dev':
-    url = 'http://localhost:'
+    url = 'https://idrugs-pharma-engine.herokuapp.com'
 
-pharma_engine = url + '8081/idrugs-pharma-engine/'
+pharma_engine = url + '/idrugs-pharma-engine'
