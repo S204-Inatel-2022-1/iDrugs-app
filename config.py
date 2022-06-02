@@ -8,7 +8,5 @@ load_dotenv()
 app = Flask(__name__)
 app.env = os.getenv('ENV')
 
-if app.env == 'dev':
-    url = 'https://idrugs-pharma-engine.herokuapp.com'
-
-pharma_engine = url + '/idrugs-pharma-engine/'
+pharma_engine = 'https://idrugs-pharma-engine.herokuapp.com/idrugs-pharma-engine/'
+client_engine = 'https://idrugs-client-engine.herokuapp.com/idrugs-client-engine/'
